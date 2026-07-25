@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <model name="bed">
+    <static>true</static>
+
+    <link name="link">
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>GothicBed_01_4k.dae</uri>
+          </mesh>
+        </geometry>
+
+        <material>
+          <ambient>0.45 0.25 0.10 1</ambient>
+          <diffuse>0.45 0.25 0.10 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+        </material>
+      </visual>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>2.2 1.8 1.0</size>
+          </box>
+        </geometry>
+      </collision>
+
+    </link>
+
+  </model>
+</sdf>
