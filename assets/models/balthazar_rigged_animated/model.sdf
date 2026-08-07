@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <model name="balthazar_rigged_animated">
+    <static>true</static>
+
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://balthazar_rigged_animated/balthazar_rigged__animated.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://balthazar_rigged_animated/balthazar_rigged__animated.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>
