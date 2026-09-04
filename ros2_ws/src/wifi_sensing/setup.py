@@ -22,9 +22,10 @@ setup(
             'pytest',
         ],
     },
-    entry_points={
-    'console_scripts': [
-        'hello_node = wifi_sensing.hello_node:main',
-    ],
+        entry_points={
+        'console_scripts': [
+            'hello_node = wifi_sensing.hello_node:main',
+            'human1_controller = wifi_sensing.human1_controller:main',
+        ],
     },
 )

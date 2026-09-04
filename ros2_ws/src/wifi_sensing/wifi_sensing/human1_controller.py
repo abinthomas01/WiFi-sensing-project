@@ -1,51 +1,78 @@
-#!/usr/bin/env python3
-
+import rclpy
+from rclpy.node import Node
+from gazebo_msgs.srv import SetEntityState
+from wifi_sensing.waypoints import WAYPOINTS
 import math
-import time
-import subprocess
 
-MODEL_NAME = "middle_age_man__rigged__animated__free"
+class HumanSlider(Node):
+    def __init__(self):
+        super().__init__('human_slider')
+        self.client = self.create_client(SetEntityState, '/gazebo/set_entity_state')
+        
+        while not self.client.wait_for_service(timeout_sec=1.0):
+            self.get_logger().info('Waiting for Gazebo /set_entity_state service...')
+        
+        self.model_name = "the_strangler"
+        
+        self.current_index = 0
+        
+        # Start at the first waypoint
+        self.current_x = float(WAYPOINTS[0][0])
+        self.current_y = float(WAYPOINTS[0][1])
+        
+        self.speed = 0.05 # Speed of sliding
+        
+        # Run 10 times a second for smooth sliding
+        self.timer = self.create_timer(0.1, self.move_smoothly)
+        self.get_logger().info('Strangler Slider Started!')
 
-x = -0.747371
-y = -1.89164
+    def move_smoothly(self):
+        # Stop if we finished the route
+        if self.current_index >= len(WAYPOINTS) - 1:
+            self.get_logger().info('Reached the end of the route! Stopping.')
+            self.timer.cancel()
+            return
 
-TARGET_X = 1.67597
-TARGET_Y = 1.00138
+        # Target is the NEXT waypoint
+        target_x = float(WAYPOINTS[self.current_index + 1][0])
+        target_y = float(WAYPOINTS[self.current_index + 1][1])
 
-STEP = 0.03
+        # Calculate direction
+        dx = target_x - self.current_x
+        dy = target_y - self.current_y
+        distance = math.sqrt(dx**2 + dy**2)
 
-while True:
+        if distance < self.speed:
+            # Reached the target, move to next waypoint
+            self.current_x = target_x
+            self.current_y = target_y
+            self.current_index += 1
+            self.get_logger().info(f'Reached Waypoint {self.current_index + 1}')
+        else:
+            # Move a tiny step towards the target
+            self.current_x += (dx / distance) * self.speed
+            self.current_y += (dy / distance) * self.speed
 
-    dx = TARGET_X - x
-    dy = TARGET_Y - y
+        # Send the new position to Gazebo
+        req = SetEntityState.Request()
+        req.state.name = self.model_name
+        req.state.pose.position.x = self.current_x
+        req.state.pose.position.y = self.current_y
+        req.state.pose.position.z = 0.0
+        
+        # Rotate to face the direction we are moving
+        angle = math.atan2(dy, dx)
+        req.state.pose.orientation.z = math.sin(angle / 2.0)
+        req.state.pose.orientation.w = math.cos(angle / 2.0)
 
-    dist = math.sqrt(dx * dx + dy * dy)
+        self.client.call_async(req)
 
-    if dist < 0.10:
-        print("Reached Hall")
-        break
+def main(args=None):
+    rclpy.init(args=args)
+    node = HumanSlider()
+    rclpy.spin(node)
+    node.destroy_node()
+    rclpy.shutdown()
 
-    x += STEP * dx / dist
-    y += STEP * dy / dist
-
-    cmd = f"""
-name: "{MODEL_NAME}"
-position {{
-  x: {x}
-  y: {y}
-  z: 0
-}}
-"""
-
-    subprocess.run([
-        "gz",
-        "topic",
-        "-p",
-        "/gazebo/default/pose/modify",
-        "-m",
-        "gazebo.msgs.Pose",
-        "-e",
-        cmd
-    ])
-
-    time.sleep(0.05)
+if __name__ == '__main__':
+    main()

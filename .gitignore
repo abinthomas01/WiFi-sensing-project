@@ -1,18 +1,31 @@
-# ROS 2 generated files
+# ROS 2 Build Files
 ros2_ws/build/
 ros2_ws/install/
 ros2_ws/log/
 
-# Python
+# Python Cache
 __pycache__/
 *.pyc
+*.pyo
+
+# Gazebo Cache
+*.cache
+
+# Heavy 3D Source Files (Too big for GitHub)
+*.glb
+*.blend
+*.blend1
+
+# Unwanted Folders (Copies/Backups)
+assets/models/all_glbFiles/
+assets/trail/
+screenshots/
+videos/
+datasets/
 
 # VS Code
 .vscode/
 
-# Linux
-*.swp
-*~
-
-# Gazebo logs
+# Misc
 *.log
+*.txt

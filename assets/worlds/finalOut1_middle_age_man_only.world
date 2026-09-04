@@ -3332,12 +3332,8 @@
       <uri>model://middle_age_man__rigged__animated__free</uri>
       <pose>-0.747371 -3.50000 0 0 0 0</pose>
      </include>
-     <include>
-      <uri>model://balthazar_rigged_animated</uri>
-      <pose>-0.747371 -1.89164 0 0 0 0</pose>
-     </include>
     <model name='the_strangler'>
-      <static>0</static>
+      <static>1</static>
       <link name='link'>
         <visual name='visual'>
           <geometry>
@@ -3372,15 +3368,6 @@
         <kinematic>0</kinematic>
       </link>
       <pose>0.875254 -0.982377 0 0 -0 0</pose>
-      <!--plugin name="strangler_velocity_controller"filename="libgazebo_ros_planar_move.so">
-        <ros>
-          <namespace>/the_strangler</namespace>
-        </ros>
-
-        <command_topic>cmd_vel</command_topic>
-        <odometry_topic>odom</odometry_topic>
-        <odometry_rate>20</odometry_rate>
-      </plugin-->
     </model>
     <model name='gaming_laptop'>
       <static>1</static>

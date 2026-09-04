@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <actor name="middle_age_man__rigged__animated__free">
+    <pose>0 0 0 0 0 0</pose>
+
+    <skin>
+      <filename>model://middle_age_man__rigged__animated__free/middle_age_man__rigged__animated__free.dae</filename>
+      <scale>0.13 0.13 0.13</scale>
+    </skin>
+
+    <animation name="GLB_Object_007_Object_5">
+      <filename>model://middle_age_man__rigged__animated__free/middle_age_man__rigged__animated__free.dae</filename>
+      <scale>0.13 0.13 0.13</scale>
+      <interpolate_x>true</interpolate_x>
+    </animation>
+
+    <script>
+      <loop>true</loop>
+      <delay_start>0.0</delay_start>
+      <auto_start>true</auto_start>
+      <trajectory id="0" type="GLB_Object_007_Object_5">
+        <waypoint><time>0.0</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>5.0</time><pose>2 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>10.0</time><pose>2 2 0 0 0 1.5708</pose></waypoint>
+        <waypoint><time>15.0</time><pose>0 2 0 0 0 3.14159</pose></waypoint>
+        <waypoint><time>20.0</time><pose>0 0 0 0 0 6.28318</pose></waypoint>
+      </trajectory>
+    </script>
+  </actor>
+</sdf>

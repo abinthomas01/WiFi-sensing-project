@@ -17,6 +17,7 @@
         <geometry>
           <mesh>
             <uri>model://the_strangler/the_strangler.dae</uri>
+            <scale>0.57 0.57 0.57</scale>
           </mesh>
         </geometry>
       </collision>
