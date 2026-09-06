@@ -1,31 +1,43 @@
-# ROS 2 Build Files
+# 1. ROS 2 & Colcon Generated Files
 ros2_ws/build/
 ros2_ws/install/
 ros2_ws/log/
+build/
+install/
+log/
 
-# Python Cache
+# 2. Python Cache & Compiled Files
 __pycache__/
 *.pyc
 *.pyo
+*.egg-info/
 
-# Gazebo Cache
+# 3. Gazebo Cache & Logs
 *.cache
+*.log
 
-# Heavy 3D Source Files (Too big for GitHub)
+# 4. Heavy 3D Source Files (Too big for GitHub)
 *.glb
 *.blend
 *.blend1
+*.bak
 
-# Unwanted Folders (Copies/Backups)
+# 5. Unwanted/Duplicate Folders
 assets/models/all_glbFiles/
 assets/trail/
+datasets/
 screenshots/
 videos/
-datasets/
-
-# VS Code
 .vscode/
 
-# Misc
-*.log
+# 6. Backup/Draft World Files
+assets/worlds/finalOut.world
+assets/worlds/finalOut1_middle_age_man_only.world
+assets/worlds/finalOut1.world.save
+assets/worlds/my_scene.world1
+assets/worlds/my_scene.world2
+assets/worlds/house_model_12
+
+# 7. Misc temporary files in the root
 *.txt
+*.PDF
