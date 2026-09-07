@@ -1,0 +1,258 @@
+# File produced by Open Asset Import Library (http://www.assimp.sf.net)
+# (assimp v5.2.0)
+
+newmtl Std_Tongue
+Kd 1 1 1
+Ke 0 0 0
+d 1
+Ns 11.4551344
+illum 2
+map_Kd *0
+bump *1
+map_bump *1
+
+newmtl Std_Skin_Head
+Kd 1 1 1
+Ke 0 0 0
+d 1
+Ns 3.24571681
+illum 2
+map_Kd *2
+bump *3
+map_bump *3
+
+newmtl Std_Skin_Body
+Kd 1 1 1
+Ke 0 0 0
+d 1
+Ns 3.24571681
+illum 2
+map_Kd *4
+bump *5
+map_bump *5
+
+newmtl Std_Skin_Arm
+Kd 1 1 1
+Ke 0 0 0
+d 1
+Ns 3.24571681
+illum 2
+map_Kd *6
+bump *7
+map_bump *7
+
+newmtl Std_Skin_Leg
+Kd 1 1 1
+Ke 0 0 0
+d 1
+Ns 3.24571681
+illum 2
+map_Kd *8
+bump *9
+map_bump *9
+
+newmtl Std_Nails
+Kd 1 1 1
+Ke 0 0 0
+d 1
+Ns 3.24571681
+illum 2
+map_Kd *10
+bump *11
+map_bump *11
+
+newmtl Std_Eyelash
+Kd 0 0 0
+Ke 0 0 0
+d 0.0655240119
+Ns 11.4551344
+illum 2
+map_Kd *12
+bump *13
+map_bump *13
+
+newmtl Mouth
+Kd 1 1 1
+Ke 0 0 0
+d 1
+Ns 3.34663653
+illum 2
+map_Kd *14
+
+newmtl Teeth
+Kd 1 1 1
+Ke 0 0 0
+d 1
+Ns 70.7106781
+illum 2
+map_Kd *15
+
+newmtl Std_Eye_R
+Kd 1 1 1
+Ke 0 0 0
+d 1
+Ns 8.34912777
+illum 2
+map_Kd *16
+bump *17
+map_bump *17
+
+newmtl Std_Cornea_R
+Kd 0 0 0
+Ke 0 0 0
+d 0
+Ns 72.1332397
+illum 2
+
+newmtl Std_Eye_L
+Kd 1 1 1
+Ke 0 0 0
+d 1
+illum 1
+map_Kd *18
+bump *19
+map_bump *19
+
+newmtl Std_Cornea_L
+Kd 0 0 0
+Ke 0 0 0
+d 0
+Ns 72.1332397
+illum 2
+
+newmtl DS_Denim_Jacket
+Kd 1 1 1
+Ke 0 0 0
+d 1
+illum 1
+map_Kd *20
+bump *21
+map_bump *21
+
+newmtl OSteel_M_Arms_L
+Kd 1 1 1
+Ke 0 0 0
+d 1
+Ns 1000
+illum 2
+map_Kd *22
+bump *23
+map_bump *23
+
+newmtl EL_M_Pants_L
+Kd 1 1 1
+Ke 0 0 0
+d 1
+Ns 10.0658808
+illum 2
+map_Kd *24
+bump *25
+map_bump *25
+
+newmtl legcuffs
+Kd 1 1 1
+Ke 0 0 0
+d 1
+Ns 1.7888552
+illum 2
+map_Kd *26
+
+newmtl SockHeel
+Kd 0.803921998 0.733332992 0.658824027
+Ke 0 0 0
+d 1
+Ns 1.7888552
+illum 2
+
+newmtl SockToe
+Kd 0.803921998 0.733332992 0.658824027
+Ke 0 0 0
+d 1
+Ns 1.7888552
+illum 2
+
+newmtl SockBody
+Kd 0.803921998 0.733332992 0.658824027
+Ke 0 0 0
+d 1
+Ns 1.7888552
+illum 2
+
+newmtl SockTrim
+Kd 0.803921998 0.733332992 0.658824027
+Ke 0 0 0
+d 1
+Ns 1.7888552
+illum 2
+
+newmtl SideWalls
+Kd 1 1 1
+Ke 0 0 0
+d 1
+Ns 1.7888552
+illum 2
+map_Kd *27
+
+newmtl Laces
+Kd 1 1 1
+Ke 0 0 0
+d 1
+Ns 1.7888552
+illum 2
+map_Kd *28
+
+newmtl InnerPadding
+Kd 1 1 1
+Ke 0 0 0
+d 1
+Ns 1.7888552
+illum 2
+map_Kd *29
+
+newmtl LaceBrace
+Kd 1 1 1
+Ke 0 0 0
+d 1
+Ns 1.7888552
+illum 2
+map_Kd *30
+
+newmtl Shoe
+Kd 1 1 1
+Ke 0 0 0
+d 1
+Ns 1.7888552
+illum 2
+map_Kd *31
+
+newmtl Tongue
+Kd 1 1 1
+Ke 0 0 0
+d 1
+Ns 1.7888552
+illum 2
+map_Kd *32
+bump *1
+map_bump *1
+
+newmtl Sole
+Kd 1 1 1
+Ke 0 0 0
+d 1
+Ns 1.7888552
+illum 2
+map_Kd *33
+
+newmtl LaceEnds
+Kd 0.603922009 0.603922009 0.603922009
+Ke 0 0 0
+d 1
+Ns 1.7888552
+illum 2
+
+newmtl $Material_29
+Kd 1 1 1
+Ke 0 0 0
+d 1
+illum 1
+

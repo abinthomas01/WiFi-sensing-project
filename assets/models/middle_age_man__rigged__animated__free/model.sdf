@@ -1,19 +1,9 @@
 <?xml version="1.0" ?>
 <sdf version="1.7">
   <model name="middle_age_man__rigged__animated__free">
-    <pose>0 0 0 0 0 0</pose>
+    <static>true</static>
 
-    <link name="body">
-      <pose>0 0 0 0 0 0</pose>
-      <inertial>
-        <mass>80.0</mass>
-        <inertia>
-          <ixx>1.0</ixx>
-          <iyy>1.0</iyy>
-          <izz>1.0</izz>
-        </inertia>
-      </inertial>
-
+    <link name="link">
       <visual name="visual">
         <geometry>
           <mesh>
@@ -30,16 +20,7 @@
             <scale>0.13 0.13 0.13</scale>
           </mesh>
         </geometry>
-        <surface>
-          <friction>
-            <ode>
-              <mu>0.0</mu>
-              <mu2>0.0</mu2>
-            </ode>
-          </friction>
-        </surface>
       </collision>
-
     </link>
   </model>
 </sdf>
