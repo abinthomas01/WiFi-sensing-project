@@ -17,6 +17,7 @@
         <geometry>
           <mesh>
             <uri>model://realistic_woman_walking_animated/realistic_woman_walking_animated.dae</uri>
+            <scale>0.50 0.50 0.50</scale>
           </mesh>
         </geometry>
       </collision>
