@@ -5,7 +5,7 @@ import math
 
 # 1. Define the routes directly in the code so it's easy to see
 STRANGLER_ROUTE = [
-    [4.98137, -0.005603], # Room 1
+    [1.67597, 1.00138], #hall
     [4.80501, 1.95532],   # Room 2
     [-2.01522, -2.00758]  # Room 3
 ]
@@ -18,6 +18,7 @@ WOMAN_ROUTE = [
 
 MAN_ROUTE = [
     [-2.01522, -2.00758], # Room 3
+    [1.67597, 1.00138], #hall
     [-1.69931, 2.28462],  # Kitchen
     [4.98137, -0.005603]  # Room 1
 ]
