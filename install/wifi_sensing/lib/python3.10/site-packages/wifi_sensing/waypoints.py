@@ -1,8 +1,7 @@
-# A simple route: Forward, Right, Backward, Left to start
+# Room Coordinates (from your chair positions)
 WAYPOINTS = [
-    [0.0, 0.0, 0.0],   # Start point
-    [2.0, 0.0, 0.0],   # Move forward 2 meters
-    [2.0, 2.0, 0.0],   # Move left 2 meters
-    [0.0, 2.0, 0.0],   # Move back 2 meters
-    [0.0, 0.0, 0.0]    # Return to start
+    [4.98137, -0.005603], #room 1
+    [1.67597, 1.00138], #hall
+    [4.80501, 1.95532], #room 2
+    [-2.01522, -2.00758] #room 3
 ]

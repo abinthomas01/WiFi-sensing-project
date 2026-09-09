@@ -7,27 +7,35 @@ import math
 STRANGLER_ROUTE = [
     [1.67597, 1.00138], #hall
     [4.80501, 1.95532],   # Room 2
-    [-2.01522, -2.00758]  # Room 3
+    [-2.01522, -2.00758],  # Room 3
+    [1.67597, 1.00138], #hall
 ]
 
 WOMAN_ROUTE = [
     [-1.69931, 2.28462],  # Kitchen
     [1.67597, 1.00138],   # Hall
-    [-2.44060, -0.072066] # Bathroom
+    [-2.44060, -0.072066], # Bathroom
+    [1.67597, 1.00138],   # Hall
+    [-1.69931, 2.28462],  # Kitchen
 ]
 
 MAN_ROUTE = [
     [-2.01522, -2.00758], # Room 3
     [1.67597, 1.00138], #hall
     [-1.69931, 2.28462],  # Kitchen
-    [4.98137, -0.005603]  # Room 1
+    [4.98137, -0.005603],  # Room 1
+    [1.67597, 1.00138], #hall
+    [-2.01522, -2.00758], # Room 3
 ]
 
 # Girl: Bathroom -> Room 2 -> Kitchen
 GIRL_ROUTE = [
     [-2.44060, -0.072066], # Bathroom
     [4.80501, 1.95532],    # Room 2
-    [-1.69931, 2.28462]    # Kitchen
+    [1.67597, 1.00138],   # Hall
+    [-1.69931, 2.28462],    # Kitchen
+    [1.67597, 1.00138], #hall
+    [-2.44060, -0.072066], # Bathroom
 ]
 
 # Balthazar: Room 1 -> Hall -> Kitchen
@@ -54,9 +62,10 @@ class SliderBrain:
         node.get_logger().info(f'{self.model_name} started moving!')
 
     def move_smoothly(self):
+        # If we reach the end of the route, loop back to the beginning (-1)
+        # So the next target becomes waypoints[0]
         if self.current_index >= len(self.waypoints) - 1:
-            self.timer.cancel()
-            return
+            self.current_index = -1
 
         target_x = float(self.waypoints[self.current_index + 1][0])
         target_y = float(self.waypoints[self.current_index + 1][1])
@@ -109,9 +118,6 @@ class DualHumanSlider(Node):
 
         # Create the Blathazar brain
         self.balthazar = SliderBrain(self, "balthazar_rigged_animated", BALTHAZAR_ROUTE)
-
-
-
 
 def main(args=None):
     rclpy.init(args=args)
